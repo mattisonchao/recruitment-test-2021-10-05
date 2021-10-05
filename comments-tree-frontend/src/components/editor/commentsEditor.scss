@@ -1,0 +1,8 @@
+.comments-tree-edit{
+  &-error{
+    color: red;
+  }
+  &-error.hidden{
+    display: none;
+  }
+}

@@ -1,0 +1,14 @@
+.comments-tree-register{
+  &-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  &-form{
+    width: 30vw;
+  }
+  &-login-button{
+    margin-top: 16px;
+  }
+}

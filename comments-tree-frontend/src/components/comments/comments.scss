@@ -1,0 +1,38 @@
+.comments-tree {
+  &-header {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    z-index: 5;
+    &-username {
+      margin: 0 16px;
+    }
+
+    &-content-wrapper {
+      display: flex;
+      margin-left: auto;
+      margin-right: 8px;
+      align-items: center;
+      color: whitesmoke;
+    }
+  }
+  &-content{
+    margin-top: 72px;
+    padding: 16px;
+  }
+  &-edit{
+    &-button{
+
+      &-wrapper{
+        position: fixed;
+        right: 32px;
+        bottom: 32px;
+      }
+    }
+  }
+  &-reply{
+    &-edit-wrapper{
+      margin-top: 32px;
+    }
+  }
+}

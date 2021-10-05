@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: comments-tree-backend
+      dockerfile: Dockerfile
+    container_name: backend
+    networks:
+      - comments-tree
+    ports:
+      - 7000:7000
+    volumes:
+      - "./data/logs/comments-tree/backend:/home/comments-tree/logs"
+    environment:
+      - "TZ=Asia/Shanghai"
+    restart: on-failure
+
+  frontend:
+    build:
+      context: comments-tree-frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    networks:
+      - comments-tree
+    volumes:
+      - "./data/comments-tree:/usr/share/nginx/html/comments-tree"
+    ports:
+      - 8888:80
+    depends_on:
+      - backend
+    environment:
+      - "TZ=Asia/Shanghai"
+
+networks:
+  comments-tree:
